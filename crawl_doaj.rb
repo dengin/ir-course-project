@@ -61,7 +61,7 @@ def makaleleriHazirla(i)
     doi = row.css("a")
     if doi != nil then
       doi.each do |doilink|
-        if doilink != nil and doilink.at("@href") != nil and doilink.at("@href").text.start_with?  "http://dx.doi" then
+        if doilink != nil and doilink.at("@href") != nil and doilink.at("@href").text.start_with?  /https?://(dx\.)?doi/ then
           makale += "<doi>"
           makale += doilink.text.strip
           makale += "</doi>"
